@@ -6,5 +6,5 @@ This program will take in the a, b, and c variables from a quadratic and return 
 2. `cd Quadratic-Factor`
 3. `./quadiamond`
 ### Other option for running ###
-If on Mac, `sudo cp quadiamond /usr/local/bin`
+If on Mac, while in Quadratic-Factor folder run: `sudo cp quadiamond /usr/local/bin`<br>
 Now you can run it wherever 
