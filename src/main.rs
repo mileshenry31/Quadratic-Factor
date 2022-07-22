@@ -1,11 +1,7 @@
 
 
 fn main() {
-<<<<<<< HEAD
    println!("{:?}", formula(3, 10, 3));
-=======
-   println!("{:?}", formula(0, -5, -2)); // Should return (9, 1)
->>>>>>> negatives
 }
 
 fn formula(a: i32, b: i32, c: i32) -> (i32, i32) {
