@@ -1,7 +1,13 @@
-
+use std::io;
 
 fn main() {
-   println!("{:?}", formula(0, -5, -2)); // Should return (9, 1)
+    let (a, b, c) = ask_for_nums();
+    if formula(a, b, c) != (0, 0) {
+        println!("{:?}", formula(a, b, c));
+    } else {
+        println!("This quadratic cannot be factored");
+    }
+    
 }
 
 fn formula(a: i32, b: i32, c: i32) -> (i32, i32) {
@@ -38,3 +44,24 @@ fn formula(a: i32, b: i32, c: i32) -> (i32, i32) {
 }
 
 
+fn ask_for_nums() -> (i32, i32, i32) {
+    let mut a = String::new();
+    let mut b = String::new();
+    let mut c = String::new();
+    println!("Enter a: ");
+    io::stdin()
+        .read_line(&mut a)
+        .expect("failed to read the input");
+    let a: i32 = a.trim().parse().expect("invalid input");
+    println!("Enter b: ");
+    io::stdin()
+        .read_line(&mut b)
+        .expect("failed to read the input");
+    let b: i32 = b.trim().parse().expect("invalid input");
+    println!("Enter c: ");
+    io::stdin()
+        .read_line(&mut c)
+        .expect("failed to read the input");
+    let c: i32 = c.trim().parse().expect("invalid input"); 
+    (a, b, c)
+}
