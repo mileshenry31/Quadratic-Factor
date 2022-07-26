@@ -17,6 +17,7 @@ fn formula(a: i32, b: i32, c: i32) -> (i32, i32) {
     // Variable that is the top number divided by the current `i` number
     let mut mul_num: i32;
     // Start at one and check through every number up to the top one to find the multiples
+    // If the top number is positive
     if ac > 0 {
         for i in 1..=ac {
             // Find even divisibles
@@ -29,10 +30,15 @@ fn formula(a: i32, b: i32, c: i32) -> (i32, i32) {
                 }
             }
         }
+    // If the top number is negative
     } else if ac < 0 {
+        // Go through each number from the top number to one to check if it works
         for i in ac..=1 {
+            // If the division makes a whole number
             if ac % i == 0 {
+                // Top number divided by current in iteration
                 mul_num = ac / i;
+                // If the numbers compute, return the correct tuple
                 if mul_num * i == ac && mul_num + i == b {
                     return (mul_num, i);
                 }
